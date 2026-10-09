@@ -1,0 +1,17 @@
+{
+  "name": "xml-namespace-resolver",
+  "version": "0.1.0",
+  "description": "Resolves XML qualified names to namespace URIs given a stack of namespace declarations from ancestor elements.",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": "./src/index.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "dependencies": {}
+}
