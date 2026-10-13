@@ -28,3 +28,10 @@ The trade-off: the resolver is scope-based, not document-aware. It does not vali
 The default namespace (prefix `""`) can be explicitly *undeclared* by binding it to an empty string, per XML Namespaces 1.1. This library honours that: `push({ '': '' })` on top of an element that declared a default namespace will cause unprefixed names in the child to resolve to `null`, not to the parent's default. The XML Namespaces 1.0 spec did not permit this undeclaration; if you need 1.0-strict behaviour you must filter empty bindings before pushing.
 
 The `xml` prefix is implicitly bound to `http://www.w3.org/XML/1998/namespace` without needing a declaration, and `xmlns` is treated as unresolvable (reserved). Neither is overridable through `push`.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
