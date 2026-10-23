@@ -1,6 +1,6 @@
 {
   "name": "xml-namespace-resolver",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Resolves XML qualified names to namespace URIs given a stack of namespace declarations from ancestor elements.",
   "type": "module",
   "main": "src/index.js",
